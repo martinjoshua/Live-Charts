@@ -34,6 +34,7 @@ namespace LiveCharts.Configurations
         private Func<T, int, double> _y = (v, i) => i;
         private Func<T, int, object> _stroke;
         private Func<T, int, object> _fill;
+        private Func<T, int, object> _pointGeometry;
 
         /// <summary>
         /// Sets values for a specific point
@@ -47,6 +48,7 @@ namespace LiveCharts.Configurations
             point.Y = _y(value, key);
             if (_stroke != null) point.Stroke = _stroke(value, key);
             if (_fill != null) point.Fill = _fill(value, key);
+            if(_pointGeometry != null) point.PointGeometry = _pointGeometry(value, key);
         }
 
         /// <summary>
@@ -130,6 +132,17 @@ namespace LiveCharts.Configurations
         public CartesianMapper<T> Fill(Func<T, int, object> predicate)
         {
             _fill = predicate;
+            return this;
+        }
+
+        public CartesianMapper<T> PointGeometry(Func<T, object> predicate)
+        {
+            return PointGeometry((t, i) => predicate(t));
+        }
+
+        public CartesianMapper<T> PointGeometry(Func<T, int, object> predicate)
+        {
+            _pointGeometry = predicate;
             return this;
         }
     }

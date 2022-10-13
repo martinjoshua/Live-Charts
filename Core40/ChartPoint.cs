@@ -183,6 +183,8 @@ namespace LiveCharts
         /// </value>
         public IChartView ChartView { get { return SeriesView.Model.Chart.View; } }
 
+        public object PointGeometry { get; set; }
+
         internal double Gci { get; set; }
     }
 }

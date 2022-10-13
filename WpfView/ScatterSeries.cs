@@ -148,7 +148,7 @@ namespace LiveCharts.Wpf
             }
 
             var p = (Path) pbv.Shape;
-            p.Data = PointGeometry;
+            p.Data = point.PointGeometry as Geometry ?? PointGeometry;
             p.Fill = Fill;
             p.Stroke = Stroke;
             p.StrokeThickness = StrokeThickness;

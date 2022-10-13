@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.12
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{D447642C-A85F-4AB0-96D9-C66CFF91AADA}"
 EndProject
@@ -268,8 +268,6 @@ Global
 		{9F22A3E2-CE88-41C3-8117-E9D3901BAA48}.Release|x86.ActiveCfg = Release|x86
 		{9F22A3E2-CE88-41C3-8117-E9D3901BAA48}.Release|x86.Build.0 = Release|x86
 		{F9637741-4358-40D8-8638-2B35AC72FA39}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F9637741-4358-40D8-8638-2B35AC72FA39}.Debug|Any CPU.Build.0 = Debug|x86
-		{F9637741-4358-40D8-8638-2B35AC72FA39}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{F9637741-4358-40D8-8638-2B35AC72FA39}.Debug|ARM.ActiveCfg = Release|ARM
 		{F9637741-4358-40D8-8638-2B35AC72FA39}.Debug|ARM.Build.0 = Release|ARM
 		{F9637741-4358-40D8-8638-2B35AC72FA39}.Debug|ARM.Deploy.0 = Release|ARM
@@ -353,5 +351,8 @@ Global
 		{537FF5D4-19FB-415E-B3D2-B83CB93E968B} = {609963C9-8E55-4B42-8B84-721B625BA1E9}
 		{CA7BA22C-ECB7-4930-9981-E9B121588401} = {609963C9-8E55-4B42-8B84-721B625BA1E9}
 		{F9637741-4358-40D8-8638-2B35AC72FA39} = {609963C9-8E55-4B42-8B84-721B625BA1E9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F766113-8AAB-4585-8CDC-4741FD2282D4}
 	EndGlobalSection
 EndGlobal
