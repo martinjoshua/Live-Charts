@@ -42,8 +42,8 @@ namespace LiveCharts.Wpf.Points
                 Canvas.SetTop(Shape, current.ChartLocation.Y);
                 Canvas.SetLeft(Shape, current.ChartLocation.X);
 
-                Shape.Width = 0;
-                Shape.Height = 0;
+                //Shape.Width = 30;
+                //Shape.Height = 30;
             }
 
             if (DataLabel != null && double.IsNaN(Canvas.GetLeft(DataLabel)))
@@ -62,11 +62,11 @@ namespace LiveCharts.Wpf.Points
 
             if (chart.View.DisableAnimations)
             {
-                Shape.Width = Diameter;
-                Shape.Height = Diameter;
+                //Shape.Width = Diameter;
+                //Shape.Height = Diameter;
 
-                Canvas.SetTop(Shape, current.ChartLocation.Y - Shape.Height*.5);
-                Canvas.SetLeft(Shape, current.ChartLocation.X - Shape.Width*.5);
+                Canvas.SetTop(Shape, current.ChartLocation.Y);
+                Canvas.SetLeft(Shape, current.ChartLocation.X);
 
                 if (DataLabel != null)
                 {

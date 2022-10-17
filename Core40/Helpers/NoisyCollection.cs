@@ -68,10 +68,10 @@ namespace LiveCharts.Helpers
     public class NoisyCollection<T> : INoisyCollection, IList<T>
     {
         #region Private Fields
-        private readonly object _sync = new object();
-        private readonly List<T> _source;
-        private const string CountString = "Count";
-        private const string IndexerString = "Item[]";
+        protected readonly object _sync = new object();
+        protected readonly List<T> _source;
+        protected const string CountString = "Count";
+        protected const string IndexerString = "Item[]";
         #endregion
 
         #region Constructors
@@ -586,7 +586,7 @@ namespace LiveCharts.Helpers
         #endregion
 
         #region Private Methods
-        private void OnNoisyCollectionChanged(IEnumerable<T> olditems, IEnumerable<T> newItems)
+        protected void OnNoisyCollectionChanged(IEnumerable<T> olditems, IEnumerable<T> newItems)
         {
             if (NoisyCollectionChanged != null)
                 NoisyCollectionChanged.Invoke(olditems, newItems);
@@ -598,7 +598,7 @@ namespace LiveCharts.Helpers
                 CollectionReset.Invoke();
         }
 
-        private void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }

@@ -129,7 +129,7 @@ namespace LiveCharts.Wpf
                     IsNew = true,
                     Shape = new Path
                     {
-                        Stretch = Stretch.Fill,
+                        Stretch = Stretch.None,
                         StrokeThickness = StrokeThickness
                     }
                 };
@@ -147,12 +147,19 @@ namespace LiveCharts.Wpf
                     .EnsureElementBelongsToCurrentDrawMargin(pbv.DataLabel);
             }
 
+            if(point.SuggestedSize.HasValue)
+            {
+                pbv.Shape.Width = point.SuggestedSize.Value.Width;
+                pbv.Shape.Height = point.SuggestedSize.Value.Height;
+            }
+
             var p = (Path) pbv.Shape;
             p.Data = point.PointGeometry as Geometry ?? PointGeometry;
             p.Fill = Fill;
             p.Stroke = Stroke;
             p.StrokeThickness = StrokeThickness;
             p.Visibility = Visibility;
+            
             Panel.SetZIndex(p, Panel.GetZIndex(this));
             p.StrokeDashArray = StrokeDashArray;
 

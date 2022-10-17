@@ -20,6 +20,7 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+using LiveCharts.Dtos;
 using System;
 
 namespace LiveCharts.Configurations
@@ -35,6 +36,7 @@ namespace LiveCharts.Configurations
         private Func<T, int, object> _stroke;
         private Func<T, int, object> _fill;
         private Func<T, int, object> _pointGeometry;
+        private Func<T, int, CoreSize> _suggestedSize;
 
         /// <summary>
         /// Sets values for a specific point
@@ -49,6 +51,7 @@ namespace LiveCharts.Configurations
             if (_stroke != null) point.Stroke = _stroke(value, key);
             if (_fill != null) point.Fill = _fill(value, key);
             if(_pointGeometry != null) point.PointGeometry = _pointGeometry(value, key);
+            if(_suggestedSize != null) point.SuggestedSize = _suggestedSize(value, key);
         }
 
         /// <summary>
@@ -143,6 +146,18 @@ namespace LiveCharts.Configurations
         public CartesianMapper<T> PointGeometry(Func<T, int, object> predicate)
         {
             _pointGeometry = predicate;
+            return this;
+        }
+
+
+        public CartesianMapper<T> SuggestedSize(Func<T, CoreSize> predicate)
+        {
+            return SuggestedSize((t, i) => predicate(t));
+        }
+
+        public CartesianMapper<T> SuggestedSize(Func<T, int, CoreSize> predicate)
+        {
+            _suggestedSize = predicate;
             return this;
         }
     }

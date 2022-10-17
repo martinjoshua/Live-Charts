@@ -185,6 +185,8 @@ namespace LiveCharts
 
         public object PointGeometry { get; set; }
 
+        public CoreSize? SuggestedSize { get; set; }
+
         internal double Gci { get; set; }
     }
 }
